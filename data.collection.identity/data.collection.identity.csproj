@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="4.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\data.collection.entity\data.collection.entity.csproj" />
+    <ProjectReference Include="..\data.collection.repository\data.collection.repository.csproj" />
+  </ItemGroup>
+
+</Project>

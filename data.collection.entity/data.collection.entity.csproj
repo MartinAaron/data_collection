@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\data.collection.util\data.collection.util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotnetSpider" Version="5.0.9" />
+    <PackageReference Include="MongoDB.Bson" Version="2.13.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\data.collection.entity\data.collection.entity.csproj" />
+    <ProjectReference Include="..\data.collection.middleware.util\data.collection.middleware.util.csproj" />
+    <ProjectReference Include="..\data.collection.repository\data.collection.repository.csproj" />
+    <ProjectReference Include="..\data.collection.util\data.collection.util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
+  </ItemGroup>
+
+</Project>

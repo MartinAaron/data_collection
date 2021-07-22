@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net5.0\data.collection.api.xml</DocumentationFile>
+    <NoWarn>1701;1702;CS1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>obj\Debug\net5.0\data.collection.api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <Target Name="CopyReferenceFiles" BeforeTargets="Build">
+    <ItemGroup>
+      <ReferenceFiles Include="%(Reference.RelativeDir)%(Reference.Filename).xml;%(Reference.RelativeDir)%(Reference.Filename).pdb" />
+    </ItemGroup>
+
+    <Message Text="Copying reference files to $(OutputPath)" Importance="High" />
+    <Copy SourceFiles="@(ReferenceFiles)" DestinationFolder="$(OutputPath)" Condition="Exists('%(RootDir)%(Directory)%(Filename)%(Extension)')" />
+    <Message Text="Copying reference files to $(PublishDir)" Importance="High" />
+    <Copy SourceFiles="@(ReferenceFiles)" DestinationFolder="$(PublishDir)" Condition="Exists('%(RootDir)%(Directory)%(Filename)%(Extension)')" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="IdentityServer4" Version="4.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\data.collection.business\data.collection.business.csproj" />
+    <ProjectReference Include="..\data.collection.entity\data.collection.entity.csproj" />
+    <ProjectReference Include="..\data.collection.middleware.util\data.collection.middleware.util.csproj" />
+    <ProjectReference Include="..\data.collection.util\data.collection.util.csproj" />
+  </ItemGroup>
+
+</Project>

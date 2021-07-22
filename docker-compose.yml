@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  data.collection.api:
+    image: datacollection-api
+    build:
+      context: .
+      dockerfile: data.collection.api/Dockerfile
+
+  data.collection.identity:
+    image: datacollection-identity
+    build:
+      context: .
+      dockerfile: data.collection.identity/Dockerfile
+

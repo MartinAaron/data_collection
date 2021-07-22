@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="InfluxData.Net" Version="8.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+      <PackageReference Include="MongoDB.Bson" Version="2.13.0" />
+      <PackageReference Include="MongoDB.Driver" Version="2.13.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\data.collection.entity\data.collection.entity.csproj" />
+      <ProjectReference Include="..\data.collection.util\data.collection.util.csproj" />
+    </ItemGroup>
+
+</Project>
