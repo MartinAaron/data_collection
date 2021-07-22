@@ -3,4 +3,4 @@
 - authService identityServer4
 - web api
 - background service
-- message quene
+- rabbbit Mq
